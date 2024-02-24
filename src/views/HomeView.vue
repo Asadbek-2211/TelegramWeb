@@ -13,9 +13,10 @@
   </div>
 </template>
 <script setup>
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
 import { supabase } from "../lib/supabaseClient";
 import { Calendar, Search } from '@element-plus/icons-vue'
+const input2 = ref('')
 onMounted(async () => {
   let { data: groups, error } = await supabase.from("groups").select("*");
   console.log(groups);
