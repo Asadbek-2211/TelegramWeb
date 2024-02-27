@@ -1,26 +1,12 @@
 <template>
-  <div class="container mx-auto">
-    <div class="flex gap-2">
-      <button class="border-none">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-         <el-input
-        v-model="input2"
-        class="input_search"
-        placeholder="Type something"
-        :prefix-icon="Search" />
-    </div>
-  </div>
+<div class="w-[100%] h-[100px] bg-[#181818] flex justify-start px-5 py-2 roter">
+    <img src="../assets/images/21104.png" alt="" class="w-[80px] h-[80px] rounded-[100%]">
+</div>
 </template>
 <script setup>
-import { onMounted, ref } from "vue";
-import { supabase } from "../lib/supabaseClient";
-import { Calendar, Search } from '@element-plus/icons-vue'
-const input2 = ref('')
-onMounted(async () => {
-  let { data: groups, error } = await supabase.from("groups").select("*");
-  console.log(groups);
-});
 </script>
 <style>
+.roter {
+ position: sticky;
+}
 </style>
