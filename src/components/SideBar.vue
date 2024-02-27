@@ -83,23 +83,23 @@
     <div class="mx-auto">
       <el-tabs v-model="tab_val" class="demo-tab">
         <el-tab-pane class="text-gray-50" label="All Chats" name="all">
-            <div v-for="group in groups" :key="group.id" class="w-[400px] h-[80px] bg-[#181818]  sideAc flex gap-4 items-center pl-4">
+            <div v-for="group in groups" :key="group.id" class="w-[400px] h-[80px] bg-[#212121]  sideAc flex gap-4 items-center pl-4">
               <img src="../assets/images/21104.png" alt="" class="w-[60px] rounded-[100%]">
             <p class="text-[#eee]">{{ group.name }}</p>
             </div>
-            <div v-for="contact in contacts" :key="contact.id" class="w-[400px] h-100px pl-4 py-3 bg-[#181818] sideAc flex gap-4 items-center">
+            <div v-for="contact in contacts" :key="contact.id" class="w-[400px] h-100px pl-4 py-3 bg-[#212121] sideAc flex gap-4 items-center">
             <img src="../assets/images/21104.png" alt="" class="w-[60px] rounded-[100%]">
             <p class="text-[#eee]">{{ contact.name }}</p>
           </div>
         </el-tab-pane>
         <el-tab-pane label="Groups" name="groups">
-          <div v-for="group in groups" :key="group.id" class="w-[400px] h-[80px] bg-[#181818] sideAc flex gap-4 items-center pl-4">
+          <div v-for="group in groups" :key="group.id" class="w-[400px] h-[80px] bg-[#212121] sideAc flex gap-4 items-center pl-4">
               <img src="../assets/images/21104.png" alt="" class="w-[60px] rounded-[100%]">
               <p class="text-[#eee]">{{ group.name }}</p>
             </div>
         </el-tab-pane>
         <el-tab-pane label="Contacts" name="contacts">
-          <div v-for="contact in contacts" :key="contact.id" class="w-[400px] h-100px bg-[#181818] sideAc flex gap-4 items-center pl-4 py-3">
+          <div v-for="contact in contacts" :key="contact.id" class="w-[400px] h-100px bg-[#212121] sideAc flex gap-4 items-center pl-4 py-3">
           <img src="../assets/images/21104.png" alt="" class="w-[60px] rounded-[100%]">
             <p class="text-[#eee]">{{ contact.name }}</p>
           </div>
@@ -208,11 +208,7 @@ const contactsImg = [
 .sidebar .el-tabs__item:hover {
   background-color: #181818;
 }
-.sideAc {
-  border: 1px solid black;
-  color: black;
-  font-size: 18px;
-}
+
 .sideBar .el-input__wrapper.is-focus {
 outline: none;
 }
