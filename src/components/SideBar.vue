@@ -95,22 +95,13 @@
           <i class="fa-solid fa-user-group"></i>
           <p>New Group</p>
         </button>
-        <el-dialog v-model="dialog_val" align-center>
-          <div class="flex justify-center items-center gap-5">
-            <input
-              v-model="input_val_group"
-              type="text"
-              class="border-black border-2 rounded-md w-[300px] p-3 focus:outline-none"
-            />
-            <button
-              @click="newGroupAdd()"
-              class="bg-blue-700 w-20 p-3 text-white rounded-md  inp_btn"
-            >
-              Add
-            </button>
-          </div>
+        <el-dialog v-model="dialog_val" align-center class="!w-96">
+          <AddGroup @close="(dialog_val = false),getGroups()" />
         </el-dialog>
-        <button @click="d_val_2 = true" class="flex items-center gap-3 px-2 btn_3">
+        <button
+          @click="d_val_2 = true"
+          class="flex items-center gap-3 px-2 btn_3"
+        >
           <i class="fa-regular fa-user"></i>
           <p>New Chat</p>
         </button>
@@ -140,6 +131,7 @@ import { supabase } from "../lib/supabaseClient";
 import MenuCom from "./MenuCom.vue";
 import Allitem from "./Allitem.vue";
 import { ClickOutside as vClickOutside } from "element-plus";
+import AddGroup from "./AddGroup.vue";
 
 const dialog_val = ref(false);
 const d_val_2 = ref(false);
@@ -156,11 +148,18 @@ const inp_val = ref("");
 const tab_val = ref("all");
 const groups = ref([]);
 const contacts = ref([]);
-onMounted(async () => {
+
+const getGroups = async () => {
   const res = await supabase.from("groups").select("*");
+  groups.value = res.data.reverse()
+};
+const getContacts = async () => {
   const res2 = await supabase.from("contacts").select("*");
-  groups.value = res.data;
-  contacts.value = res2.data;
+  contacts.value = res2.data.reverse();
+};
+onMounted(async () => {
+  getGroups();
+  getContacts();
 });
 let boolean = ref(false);
 
@@ -264,22 +263,21 @@ const newContactAdd = () => {
   background-color: #181818;
 }
 .el-popper.is-light .el-popper__arrow {
-width: 1200px;
+  width: 1200px;
 }
 .inp_btn:hover {
   background-color: rgb(0, 136, 255);
 }
 .btn_1:hover {
-background-color: #212121;
-border-radius: 5px;
+  background-color: #212121;
+  border-radius: 5px;
 }
 .btn_2:hover {
-background-color: #212121;
-border-radius: 5px;
+  background-color: #212121;
+  border-radius: 5px;
 }
 .btn_3:hover {
-background-color: #212121;
-border-radius: 5px;
+  background-color: #212121;
+  border-radius: 5px;
 }
-
 </style>

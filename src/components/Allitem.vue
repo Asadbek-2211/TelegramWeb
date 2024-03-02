@@ -12,6 +12,7 @@
 </template>
 <script setup>
 const props = defineProps(["name"]);
+
 </script>
 <style>
 
