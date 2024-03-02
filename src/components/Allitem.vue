@@ -1,6 +1,6 @@
 <template>
-  <div
-    class="w-[380px] cursor-pointer mx-auto h-[80px] bg-[#212121] sideAc flex gap-4 items-center pl-4"
+  <div @click="active()"
+    class="w-[380px] cursor-pointer mx-auto h-[80px] bg-[#212121] sideAc flex gap-4 items-center pl-4 active"
   >
     <img
       src="../assets/images/21104.png"
@@ -13,3 +13,6 @@
 <script setup>
 const props = defineProps(["name"]);
 </script>
+<style>
+
+</style>

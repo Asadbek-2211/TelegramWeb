@@ -5,7 +5,7 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/groups/:groups_id',
+      path: '/groups/:group_id',
       name: 'groups',
       component: () => import('../views/GroupsView.vue')
     },
