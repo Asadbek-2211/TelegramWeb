@@ -33,4 +33,6 @@ await supabase.from("groups")
     })
 })
 }
+
+
 </script>

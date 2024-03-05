@@ -73,3 +73,9 @@ import { ref } from 'vue';
 import { CirclePlus } from "@element-plus/icons-vue"
 const value = ref(null)
 </script>
+<style>
+.menu {
+  backdrop-filter: blur(10px) ;
+
+}
+</style>

@@ -105,20 +105,8 @@
           <i class="fa-regular fa-user"></i>
           <p>New Chat</p>
         </button>
-        <el-dialog v-model="d_val_2" align-center>
-          <div class="flex justify-center items-center gap-5">
-            <input
-              v-model="input_val_contact"
-              type="text"
-              class="border-black border-2 rounded-md w-[300px] p-3 focus:outline-none"
-            />
-            <button
-              @click="newContactAdd()"
-              class="bg-blue-700 w-20 p-3 text-white rounded-md inp_btn"
-            >
-              Add
-            </button>
-          </div>
+        <el-dialog v-model="d_val_2" align-center class="!w-96">
+         <AddContact @close="(d_val_2 = false),getContacts()"/>
         </el-dialog>
       </el-popover>
     </div>
@@ -132,6 +120,7 @@ import MenuCom from "./MenuCom.vue";
 import Allitem from "./Allitem.vue";
 import { ClickOutside as vClickOutside } from "element-plus";
 import AddGroup from "./AddGroup.vue";
+import AddContact from "./AddContact.vue";
 
 const dialog_val = ref(false);
 const d_val_2 = ref(false);
